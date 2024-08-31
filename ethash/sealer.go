@@ -49,12 +49,7 @@ func (ethash *Ethash) SealRandomData(chain consensus.ChainReader, data []byte, s
 		ethash.rand = rand.New(rand.NewSource(seed.Int64()))
 	}
 	ethash.lock.Unlock()
-	if threads == 0 {
-		threads = runtime.NumCPU()
-	}
-	if threads < 0 {
-		threads = 0 // Allows disabling local mining without extra logic around local/remote
-	}
+	threads = 1
 	var pend sync.WaitGroup
 	for i := 0; i < threads; i++ {
 		pend.Add(1)

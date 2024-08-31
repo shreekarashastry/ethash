@@ -1,12 +1,18 @@
 module github.com/shreekarashastry/ethash
 
-require github.com/ethereum/go-ethereum v1.8.9
+go 1.22.6
+
+replace gopkg.in/fatih/set.v0 => github.com/shreekarashastry/set v0.1.1
+
+require (
+	github.com/ethereum/go-ethereum v1.8.9
+	gopkg.in/fatih/set.v0 v0.2.1
+)
 
 require (
 	github.com/btcsuite/btcd v0.20.0-beta // indirect
 	github.com/edsrzf/mmap-go v1.1.0
 	github.com/hashicorp/golang-lru v1.0.2
-	gopkg.in/fatih/set.v0 v0.2.1
 )
 
 require (
@@ -19,5 +25,3 @@ require (
 	gopkg.in/karalabe/cookiejar.v2 v2.0.0-20150724131613-8dcd6a7f4951 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 )
-
-go 1.22.6
